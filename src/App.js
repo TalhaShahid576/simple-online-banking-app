@@ -1,27 +1,21 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import AccountDetails from "./components/AccountDetails";
-import Transactions from "./components/TransactionsHistory";
-import Transfer from "./components/Transfer";
 import Logout from "./components/Logout";
-import Navbar from "./components/Navbar";
+import AccountDetails from "./components/AccountDetails";
+import Transfer from "./components/Transfer";
 
-const App = () => {
-  return (
-    <>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/account-details" component={AccountDetails} />
-        <Route path="/transactions" component={Transactions} />
-        <Route path="/transfer" component={Transfer} />
-        <Route path="/logout" component={Logout} />
-      </Switch>
-    </>
-  );
-};
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/" element={Home} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/logout" component={Logout} />
+      <Route exact path="/account-details" component={AccountDetails} />
+      <Route exact path="/transfer" component={Transfer} />
+    </Switch>
+  </Router>
+);
 
 export default App;

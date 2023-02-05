@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { createRoot } from "react-dom/client";
 
 const Transfer = () => {
   const [transferData, setTransferData] = useState({
     recipientAccountNumber: "",
     amount: "",
   });
-  const history = useHistory();
+  const history = createRoot();
 
   const handleInputChange = (event) => {
     setTransferData({

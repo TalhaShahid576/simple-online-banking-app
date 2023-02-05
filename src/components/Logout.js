@@ -1,20 +1,17 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Home from "../pages/Home";
-import AccountDetails from "./AccountDetails";
-import Transfer from "./Transfer";
-import Logout from "./Logout";
-// import "./App.css";
+import { createRoot } from "react-dom/client";
 
-const App = () => (
-  <div className="App">
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/account-details" component={AccountDetails} />
-      <Route path="/transfer" component={Transfer} />
-      <Route path="/logout" component={Logout} />
-    </Switch>
-  </div>
-);
+const Logout = () => {
+  const history = createRoot();
 
-export default App;
+  const handleLogout = () => {
+    // Code to log out the user
+    // ...
+    // Redirect to login page
+    history.push("/login");
+  };
+
+  return <button onClick={handleLogout}>Logout</button>;
+};
+
+export default Logout;
