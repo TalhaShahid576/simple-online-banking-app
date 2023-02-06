@@ -17,9 +17,9 @@ const AccountDetails = ({ user, getUser }) => {
     e.preventDefault();
     try {
       await axios.patch(
-        "https://web-assessment.apps.ocp.tmrnd.com.my/me",
+        "https://web-assessment.apps.ocp.tmrnd.com.my/api/user",
         {
-          name,
+          id,
           email,
         },
         {

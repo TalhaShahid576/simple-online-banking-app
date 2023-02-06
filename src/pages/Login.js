@@ -14,8 +14,8 @@ const Login = ({ getUser }) => {
       const response = await axios.post(
         "https://web-assessment.apps.ocp.tmrnd.com.my/api/auth/loginAdmin",
         {
-          loginId: "youremail.com",
-          password: "your password",
+          loginId: "admin",
+          password: "password",
         },
         {
           headers: {
@@ -25,6 +25,8 @@ const Login = ({ getUser }) => {
         }
       );
       login(response.data.token);
+      localStorage.setItem("token", response.data.accessToken);
+      return true;
       getUser();
     } catch (err) {
       setError(err.response.data.message);

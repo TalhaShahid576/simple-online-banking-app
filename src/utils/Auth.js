@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const login = async (email, password) => {
+const login = async (loginId, password) => {
   try {
     const response = await axios.post(
-      "https://web-assessment.apps.ocp.tmrnd.com.my/api/auth/login",
-      { email, password },
+      "https://web-assessment.apps.ocp.tmrnd.com.my/api/auth/loginAdmin",
+      { loginId: "admin", password: "password" },
       {
         headers: {
           "Content-Type": "application/json",
