@@ -10,7 +10,7 @@ const App = () => (
   <Router>
     <Routes>
       <Route exact path="/pages/Home/index" element={Home} />
-      <Route exact path="pages/login" element={Login} />
+      <Route exact path="/pages/login" element={Login} />
       <Route exact path="/logout" element={Logout} />
       <Route exact path="/account-details" element={AccountDetails} />
       <Route exact path="/transfer" element={Transfer} />

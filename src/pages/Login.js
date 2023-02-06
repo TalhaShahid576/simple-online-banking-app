@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { login } from "../utils/Auth";
+import "../App.css";
 
 const Login = ({ getUser }) => {
   const [email, setEmail] = useState("");
@@ -11,7 +12,7 @@ const Login = ({ getUser }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://web-assessment.apps.ocp.tmrnd.com.my/api/auth/login",
+        "https://web-assessment.apps.ocp.tmrnd.com.my/api/auth/loginAdmin",
         {
           email,
           password,
@@ -31,25 +32,29 @@ const Login = ({ getUser }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <label htmlFor="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Login</button>
-    </form>
+    <div class="container">
+      <form onSubmit={handleSubmit}>
+        <h1>Welcome to MBANK</h1>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        {/* <label htmlFor="email">Email:</label> */}
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        {/* <label htmlFor="password">Password:</label> */}
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
   );
 };
 

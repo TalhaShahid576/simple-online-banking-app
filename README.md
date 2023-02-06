@@ -41,7 +41,7 @@ Navigate to the project directory:
   npm run start
 ```
 
-The application will be available at http://localhost:3000.
+The application will be available at http://localhost:3000/login.
 
 # Built With
 
