@@ -4,7 +4,7 @@ import { login } from "../utils/Auth";
 import "../App.css";
 
 const Login = ({ getUser }) => {
-  const [email, setEmail] = useState("");
+  const [LoginId, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
@@ -14,7 +14,7 @@ const Login = ({ getUser }) => {
       const response = await axios.post(
         "https://web-assessment.apps.ocp.tmrnd.com.my/api/auth/loginAdmin",
         {
-          email,
+          LoginId,
           password,
         },
         {
@@ -38,10 +38,10 @@ const Login = ({ getUser }) => {
         {error && <p style={{ color: "red" }}>{error}</p>}
         {/* <label htmlFor="email">Email:</label> */}
         <input
-          type="email"
-          id="email"
-          placeholder="Enter email address"
-          value={email}
+          type="text"
+          LoginId=""
+          placeholder="Enter Login ID"
+          value={LoginId}
           onChange={(e) => setEmail(e.target.value)}
         />
         {/* <label htmlFor="password">Password:</label> */}
