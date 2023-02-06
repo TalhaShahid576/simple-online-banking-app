@@ -1,20 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home/index";
 import Login from "./pages/Login";
-import Logout from "./components/Logout";
-import AccountDetails from "./components/AccountDetails";
-import Transfer from "./components/Transfer";
+// import Logout from "./components/Logout";
+// import AccountDetails from "./components/AccountDetails";
+// import Transfer from "./components/Transfer";
 
 const App = () => (
   <Router>
-    <Switch>
-      <Route exact path="/" element={Home} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/logout" component={Logout} />
-      <Route exact path="/account-details" component={AccountDetails} />
-      <Route exact path="/transfer" component={Transfer} />
-    </Switch>
+    <Routes>
+      <Route exact path="/pages/Home/index" element={Home} />
+      <Route exact path="pages/login" element={Login} />
+      <Route exact path="/logout" element={Logout} />
+      <Route exact path="/account-details" element={AccountDetails} />
+      <Route exact path="/transfer" element={Transfer} />
+    </Routes>
   </Router>
 );
 

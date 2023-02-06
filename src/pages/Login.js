@@ -11,10 +11,16 @@ const Login = ({ getUser }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://web-assessment.apps.ocp.tmrnd.com.my/login",
+        "https://web-assessment.apps.ocp.tmrnd.com.my/api/auth/login",
         {
           email,
           password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "API-KEY": "m.talhas1993@gmail.com",
+          },
         }
       );
       login(response.data.token);

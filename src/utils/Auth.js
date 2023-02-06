@@ -3,7 +3,7 @@ import axios from "axios";
 const login = async (email, password) => {
   try {
     const response = await axios.post(
-      "https://web-assessment.apps.ocp.tmrnd.com.my/login",
+      "https://web-assessment.apps.ocp.tmrnd.com.my/api/auth/login",
       { email, password },
       {
         headers: {

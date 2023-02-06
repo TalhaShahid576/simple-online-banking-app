@@ -28,9 +28,6 @@ class App extends Component {
               <li>
                 <Link to="/home">Home</Link>
               </li>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
             </ul>
             <hr />
             <Routes>
@@ -39,14 +36,14 @@ class App extends Component {
                 path="/"
                 render={() => {
                   return this.state.isUserAuthenticated ? (
-                    <Navigate to="/login" />
-                  ) : (
                     <Navigate to="/home" />
+                  ) : (
+                    <Navigate to="/login" />
                   );
                 }}
               />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/login" component={Login} />
+              <Route exact path="/home" element={<Home />} />
+              <Route exact path="/login" element={<Login />} />
             </Routes>
           </div>
         </Router>
