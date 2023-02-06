@@ -1,33 +1,58 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import React, { Component } from "react";
+import { render } from "react-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Navigate,
+} from "react-router-dom";
+import Home from "./pages/Home/index";
 import Login from "./pages/Login";
-import Logout from "./components/Logout";
-import AccountDetails from "./components/AccountDetails";
-import Transfer from "./components/Transfer";
 
-const AuthLayout = () => (
-  <React.Fragment>
-    <Route path="/home" component={Home} />
-    <Route path="/logout" component={Logout} />
-    <Route path="/account-details" component={AccountDetails} />
-    <Route path="/transfer" component={Transfer} />
-  </React.Fragment>
-);
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "React",
+      isUserAuthenticated: true,
+    };
+  }
 
-// const redirectIfUser = () => {
-//   // Add your own logic to redirect if user is already logged in
-// };
+  render() {
+    return (
+      <div>
+        <Router>
+          <div>
+            <ul>
+              <li>
+                <Link to="/home">Home</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            </ul>
+            <hr />
+            <Routes>
+              <Route
+                exact
+                path="/"
+                render={() => {
+                  return this.state.isUserAuthenticated ? (
+                    <Navigate to="/login" />
+                  ) : (
+                    <Navigate to="/home" />
+                  );
+                }}
+              />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/login" component={Login} />
+            </Routes>
+          </div>
+        </Router>
+      </div>
+    );
+  }
+}
 
-const routes = (
-  <Route path="/" component={Login}>
-    <Route element={AuthLayout} />
-  </Route>
-);
-
-const router = createBrowserRouter({ routes });
-
-createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
-);
+render(<App />, document.getElementById("root"));
