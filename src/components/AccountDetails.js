@@ -19,7 +19,6 @@ const AccountDetails = ({ user, getUser }) => {
       await axios.patch(
         "https://web-assessment.apps.ocp.tmrnd.com.my/api/user",
         {
-          id,
           email,
         },
         {
