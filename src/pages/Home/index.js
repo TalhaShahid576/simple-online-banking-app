@@ -2,12 +2,12 @@ import React from "react";
 
 const Home = ({ user, getUser }) => {
   React.useEffect(() => {
-    getUser();
+    // getUser();
   }, [getUser]);
 
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Dashboard</h1>
       {user && (
         <>
           <p>Welcome, {user.name}</p>
