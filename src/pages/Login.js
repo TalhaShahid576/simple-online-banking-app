@@ -26,6 +26,8 @@ const Login = ({ getUser }) => {
       );
       login(response.data.token);
       localStorage.setItem("token", response.data.accessToken);
+      localStorage.setItem("user", JSON.stringify(response["user"]));
+      window.location.href = "/home";
       return true;
       getUser();
     } catch (err) {

@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import Login from "./pages/Login";
 import Home from "./pages/Home/index";
-import AccountDetails from "./components/AccountDetails";
+// import AccountDetails from "./components/AccountDetails";
 import Transfer from "./components/Transfer";
 
 class App extends Component {
@@ -46,11 +46,7 @@ class App extends Component {
               />
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/home" element={<Home />} />
-              <Route
-                exact
-                path="/account-details"
-                element={<AccountDetails />}
-              />
+
               <Route exact path="/transfer" element={<Transfer />} />
             </Routes>
           </div>
