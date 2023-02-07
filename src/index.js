@@ -10,6 +10,7 @@ import {
 import Login from "./pages/Login";
 import Home from "./pages/Home/index";
 import AccountDetails from "./components/AccountDetails";
+import Transfer from "./components/Transfer";
 
 class App extends Component {
   constructor() {
@@ -50,6 +51,7 @@ class App extends Component {
                 path="/account-details"
                 element={<AccountDetails />}
               />
+              <Route exact path="/transfer" element={<Transfer />} />
             </Routes>
           </div>
         </Router>

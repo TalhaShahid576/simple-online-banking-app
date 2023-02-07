@@ -21,7 +21,7 @@ const Transfer = () => {
 
     try {
       const response = await axios.post(
-        "https://web-assessment.apps.ocp.tmrnd.com.my/api/v1/transactions",
+        "https://web-assessment.apps.ocp.tmrnd.com.my/api/transactions",
         transferData
       );
 
