@@ -29,6 +29,7 @@ const Login = ({ getUser }) => {
       localStorage.setItem("user", JSON.stringify(response["user"]));
       window.location.href = "/home";
       return true;
+      // eslint-disable-next-line
       getUser();
     } catch (err) {
       setError(err.response.data.message);

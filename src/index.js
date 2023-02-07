@@ -26,12 +26,12 @@ class App extends Component {
       <div>
         <Router>
           <div>
-            {/* <ul>
+            <ul>
               <li>
                 <Link to="/home">Home</Link>
               </li>
             </ul>
-            <hr /> */}
+            <hr />
             <Routes>
               <Route
                 exact
