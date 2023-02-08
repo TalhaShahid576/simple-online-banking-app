@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const Home = () => {
-  const [user, setUser] = useState({});
+  const [currentUser, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   const [update, setUpdate] = useState(false);
   const [newUser, setNewUser] = useState({});
@@ -52,35 +52,36 @@ const Home = () => {
       ) : (
         <div>
           <h2>Account Details</h2>
-          <p>Name: {user.name}</p>
-          <p>Email: {user.email}</p>
-          <p>Phone: {user.phone}</p>
-          <p>Address: {user.address}</p>
+          <p>ID: {currentUser.idNo}</p>
+          <p>Name: {currentUser.name}</p>
+          <p>Email: {currentUser.email}</p>
+          <p>Account balance: {currentUser.bankAccountBalance}</p>
+          <p>Address: {currentUser.address2}</p>
           <button onClick={() => setUpdate(true)}>Update</button>
           {update && (
             <form onSubmit={submitUpdate}>
               <input
                 type="text"
                 name="name"
-                value={newUser.name || user.name}
+                value={newUser.name || currentUser.name}
                 onChange={handleUpdate}
               />
               <input
                 type="email"
                 name="email"
-                value={newUser.email || user.email}
+                value={newUser.email || currentUser.email}
                 onChange={handleUpdate}
               />
               <input
                 type="text"
                 name="phone"
-                value={newUser.phone || user.phone}
+                value={newUser.phone || currentUser.phone}
                 onChange={handleUpdate}
               />
               <input
                 type="text"
                 name="address"
-                value={newUser.address || user.address}
+                value={newUser.address || currentUser.address2}
                 onChange={handleUpdate}
               />
               <button type="submit">Submit</button>
