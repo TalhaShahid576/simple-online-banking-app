@@ -4,7 +4,7 @@
 
 - Login and Logout
 - View and update his account details
-- View his transactions history
+- View his transaction history
 - Transfer money to others
 
 # Getting Started
